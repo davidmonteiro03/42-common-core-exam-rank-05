@@ -6,26 +6,24 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:35:20 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/02/04 17:35:20 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/16 11:30:05 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TARGETGENERATOR_HPP
-# define TARGETGENERATOR_HPP
+#pragma once
 
-# include "ATarget.hpp"
-# include <map>
+#include "ATarget.hpp"
+#include <map>
 
 class TargetGenerator
 {
-	private:
-		std::map<std::string, ATarget*> _targets;
-	public:
-		TargetGenerator();
-		~TargetGenerator();
-		void learnTargetType(ATarget* target);
-		void forgetTargetType(const std::string& target_type);
-		ATarget* createTarget(const std::string& target_type);
-};
+private:
+	std::map<std::string, ATarget *> _targets;
 
-#endif
+public:
+	TargetGenerator();
+	~TargetGenerator();
+	void learnTargetType(ATarget *);
+	void forgetTargetType(const std::string &);
+	ATarget *createTarget(const std::string &);
+};

@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:35:48 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/02/04 17:35:55 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/16 11:29:21 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ SpellBook::SpellBook() {}
 
 SpellBook::~SpellBook()
 {
-	std::map<std::string, ASpell*>::iterator it = _spells.begin();
+	std::map<std::string, ASpell *>::iterator it = _spells.begin();
 	while (it != _spells.end())
 	{
 		delete it->second;
@@ -25,17 +25,17 @@ SpellBook::~SpellBook()
 	_spells.clear();
 }
 
-void SpellBook::learnSpell(ASpell* spell)
+void SpellBook::learnSpell(ASpell *spell)
 {
 	if (!spell)
-		return ;
+		return;
 	if (_spells.find(spell->getName()) == _spells.end())
 		_spells[spell->getName()] = spell->clone();
 }
 
-void SpellBook::forgetSpell(const std::string& spell_name)
+void SpellBook::forgetSpell(const std::string &spell_name)
 {
-	std::map<std::string, ASpell*>::iterator it = _spells.find(spell_name);
+	std::map<std::string, ASpell *>::iterator it = _spells.find(spell_name);
 	if (it != _spells.end())
 	{
 		delete it->second;
@@ -43,10 +43,10 @@ void SpellBook::forgetSpell(const std::string& spell_name)
 	}
 }
 
-ASpell* SpellBook::createSpell(const std::string& spell_name)
+ASpell *SpellBook::createSpell(const std::string &spell_name)
 {
-	ASpell* tmp = NULL;
+	ASpell *tmp = NULL;
 	if (_spells.find(spell_name) != _spells.end())
 		tmp = _spells[spell_name];
-	return (tmp);
+	return tmp;
 }

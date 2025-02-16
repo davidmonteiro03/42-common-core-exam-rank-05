@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:36:20 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/02/04 17:36:21 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/16 11:28:57 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,4 @@ Polymorph::Polymorph() : ASpell("Polymorph", "turned into a critter") {}
 
 Polymorph::~Polymorph() {}
 
-ASpell* Polymorph::clone() const { return (new Polymorph()); }
+ASpell *Polymorph::clone() const { return new Polymorph(); }

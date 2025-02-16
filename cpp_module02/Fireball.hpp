@@ -6,21 +6,18 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:36:55 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/02/04 17:36:57 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/16 11:27:51 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIREBALL_HPP
-# define FIREBALL_HPP
+#pragma once
 
-# include "ASpell.hpp"
+#include "ASpell.hpp"
 
 class Fireball : public ASpell
 {
-	public:
-		Fireball();
-		~Fireball();
-		ASpell* clone() const;
+public:
+	Fireball();
+	~Fireball();
+	ASpell *clone() const;
 };
-
-#endif
